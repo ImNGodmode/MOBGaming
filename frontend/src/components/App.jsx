@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
 import AuthPage from "../pages/AuthPage";
-import NewOrderPage from "../pages/NewOrderPage";
-import OrderHistoryPage from "../pages/OrderHistoryPage";
+import NewOrder from "../pages/NewOrder";
+import Store from "../pages/Store";
 import Navbar from "./Navbar";
 import { getUser } from "../utilities/users-service";
 
@@ -15,10 +15,10 @@ function App() {
     <div className="App">
        {user ? (
         <>
-          <Navbar user={user} />
+          <Navbar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/orders/new/:id" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/games/new/:id" element={<NewOrder />} />
+            <Route path="/games" element={<Store />} />
           </Routes>
         </>
       ) : (

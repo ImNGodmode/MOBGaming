@@ -50,6 +50,13 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+userSchema.methods.comparePassword = async function (
+  plainText,
+  hashedPassword
+) {
+  return await bcrypt.compare(plainText, hashedPassword);
+};
+
 // Use mongoose and schema to create user model
 const User = mongoose.model("User", userSchema);
 

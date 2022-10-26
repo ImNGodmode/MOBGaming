@@ -42,6 +42,53 @@ exports.createUser = async (request, response) => {
   }
 };
 
+exports.login = async (request, response) => {
+  try {
+    // 1. Retrieve email and password
+    const { email, password } = request.body;
+
+    // Assuming email or password was not provided
+    if (!email || !password) {
+      throw new Error("Email and password are required fields");
+    }
+
+    // 2. Use the email to find user
+    const currentUser = await User.findOne({ email }).select("+password");
+
+    // 3. Create an instance method to compare password
+    if (
+      !currentUser ||
+      !(await currentUser.comparePassword(password, currentUser.password))
+    ) {
+      throw new Error("Invalid email or password");
+    }
+
+    // 4. If the code reach this point it means that the password was correct
+    const token = jwt.sign(
+      { id: currentUser._id },
+      process.env.JWT_SECRET_KEY,
+      { expiresIn: process.env.JWT_EXPIRATION_DATE }
+    );
+
+    // 5. Remove password from output
+    currentUser.password = undefined;
+
+    // 6. Send response
+    response.status(200).json({
+      status: "success",
+      data: {
+        currentUser,
+        token,
+      },
+    });
+  } catch (error) {
+    response.status(400).json({
+      status: "fail",
+      message: error.message,
+    });
+  }
+};
+
 // Define a route handler for retrieving the a single user
 exports.getUser = async (request, response) => {
   try {

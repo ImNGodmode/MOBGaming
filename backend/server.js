@@ -4,7 +4,7 @@ const morgan = require("morgan")
 const favicon = require("serve-favicon")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
-
+const cors = require("cors")
 const userRouter = require("./routes/api/users");
 
 dotenv.config()
@@ -21,7 +21,8 @@ const DB = mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUn
 app.use(morgan("dev"));
 
 app.use(express.json());
-
+ 
+app.use(cors())
 // routes
 app.use("/api/users", userRouter);
 
