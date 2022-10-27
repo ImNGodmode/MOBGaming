@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import GamesList from '../components/GamesList';
 import Search from '../components/Search';
- 
+import Detail from '../components/Detail';
+
 const apiKey = process.env.REACT_APP_API_KEY
 
 function Store() {
@@ -37,8 +38,9 @@ console.log(apiKey)
       const data = await response.json();
       // console.log(data.results)
       // const game = data
-      // console.log(data)
+       console.log(data)
       setFoundGame(data);
+      
     } catch (e) {
       console.error(e)
     }
@@ -55,19 +57,17 @@ console.log(apiKey)
   return (
   <>
     <div>Store</div>
-    
-    
-    {console.log(apiKey)}
     <Search searchGame={searchGame} foundGame={foundGame} />
     
-    <GamesList games = {games}/>
+    {foundGame ? (
 
-
-
+      <Detail foundGame={foundGame}/>
+    ) : (
+      <GamesList games = {games}/>
+    )}
+        
   </>
-    
-    
-  
+      
     )
 }
 

@@ -73,11 +73,13 @@ function Search(props) {
     const loaded = () => {
         return (
             <div className='card mt-4'>
+                {console.log(props.foundGame)}
                 <a href='#'>{props.foundGame.name}</a> <br />
                 <img src={props.foundGame.background_image} alt={props.foundGame.name} /><br />
                 Rating: {props.foundGame.rating} <br />
                 Meta Critic:{props.foundGame.metacritic} <br />
                 Price: $60 <br />
+                <div>Buy Now!</div> 
             </div>
         )
     }

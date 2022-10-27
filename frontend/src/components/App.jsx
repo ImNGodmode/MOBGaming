@@ -10,7 +10,10 @@ import { getUser } from "../utilities/users-service";
 
 function App() {
   const [user, setUser] = useState(getUser());
+  
   console.log(user)
+  
+
   return (
     <div className="App">
        {user ? (
