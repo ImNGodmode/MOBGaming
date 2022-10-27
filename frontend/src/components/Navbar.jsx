@@ -14,7 +14,7 @@ function Navbar({ user }) {
     <nav>
       <Link to="/games">Store</Link>
       &nbsp; | &nbsp;
-      <Link to="/games/new/:id">New Order</Link>
+      <Link to="/games/cart">New Order</Link>
       <span style={{ paddingLeft: "10px" }}>
         Welcome {user.newUser?.name || user.currentUser?.name}
       </span>

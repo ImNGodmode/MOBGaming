@@ -29,7 +29,7 @@ export const logOut = () => {
 
 export const getToken = () => {
     const token = JSON.parse(localStorage.getItem("data"))?.token;
-    console.log(token);
+    //console.log(token);
     if (!token) return null;
     const payload = JSON.parse(atob(token.split(".")[1]));
     if (payload.exp < Number.parseInt(Date.now() / 1000)) {

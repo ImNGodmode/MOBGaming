@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
 import AuthPage from "../pages/AuthPage";
-import NewOrder from "../pages/NewOrder";
+import CartPage from "../pages/CartPage";
 import Store from "../pages/Store";
 import Navbar from "./Navbar";
 import { getUser } from "../utilities/users-service";
@@ -20,7 +20,7 @@ function App() {
         <>
           <Navbar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/games/new/:id" element={<NewOrder />} />
+            <Route path="/games/cart" element={<CartPage />} />
             <Route path="/games" element={<Store />} />
           </Routes>
         </>

@@ -1,39 +1,16 @@
-// import React from 'react'
 
-// function GamesList({games}) {
-    
-//   return (
-//     <>
-//             <div>GamesList</div>
-//             <ul>
-//             {games.map((game, i) => {
-//                 return (
-//                 <li key={i}>
-//                     Name: <a href='#'>{game.name}</a>
-//                     <img src={`${game.background_image}`} alt={game.name}/> <br/>
-//                     Rating: {game.rating} <br/>
-//                     Meta Critic:{game.metacritic} <br/>
-//                     Price: $60 <br/>
-//                 </li>
-//                 )
-//             })
-//         }
-//     </ul>
-//   </>
-//   )
-// }
-  
-
-// export default GamesList
 import React from 'react'
-function GamesList({ games }) {
+function GamesList({ games, addToCart }) {
+   
     let gamesData = games.map((game, i) => (
+        
         <div className='d-flex flex-wrap justify-content-center mt-5 card mx-3 ' key={i}>
-            <a href='#' className='d-flex justify-content-center' >{game.name}</a>
+            <h1 className='d-flex justify-content-center' >{game.name}</h1>
             <img src={`${game.background_image}`} alt={game.name} /> <br />
             Rating: {game.rating} <br />
             Meta Critic:{game.metacritic} <br />
             Price: $60 <br />
+            <input type="submit" value="add" onClick={() => addToCart(game)} />
         </div>
 
     ))

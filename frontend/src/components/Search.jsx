@@ -1,63 +1,11 @@
-// import { useState } from 'react'
 
-// function Search(props) {
-    
-//     const [formData, setFormData] = useState({
-//         searchTerm: ""
-//       });
-    
-//         //handleChange - updates formData when we type into form
-//         const handleChange = (event) => {
-//           //use the event object to detect key and value to update
-//           setFormData({ ...formData, [event.target.name]: event.target.value });
-//           };
-      
-//           const handleSubmit = (event) => {
-              
-//           let slug = formData.searchTerm.split(' ').join('-').toLowerCase()
-//           //console.log(slug)
-//           //prevent page from refreshing on form submission
-//           event.preventDefault();
-          
-//           props.searchGame(slug);
-//           };
-
-
-//           const loaded =() => {
-//             return (
-//                 <>
-//                     Name:<a href='#'>{props.foundGame.name}</a> <br/>
-//                     <img src={props.foundGame.background_image} alt={props.foundGame.name}/><br/>
-//                     Rating: {props.foundGame.rating} <br/>
-//                     Meta Critic:{props.foundGame.metacritic} <br/>
-//                     Price: $60 <br/>
-//                 </>
-//             )
-//             }
-        
-//             const loading =()=> {
-//               return "Game not available"
-//           }
-
-//   return (
-//      <>
-     
-//      <form onSubmit={handleSubmit}>
-//         <input type='text' name='searchTerm' onChange={handleChange} value={formData.searchTerm} required/>
-//         <input type='submit' value='submit' />
-
-//     </form>
-//     {props.foundGame ? loaded() : loading()}
-     
-//      </>
-
-//   )}
-// export default Search
 import { useState } from 'react'
+
 function Search(props) {
     const [formData, setFormData] = useState({
         searchTerm: ""
     });
+    const foundGame = props.foundGame
     //handleChange - updates formData when we type into form
     const handleChange = (event) => {
         //use the event object to detect key and value to update
@@ -79,7 +27,7 @@ function Search(props) {
                 Rating: {props.foundGame.rating} <br />
                 Meta Critic:{props.foundGame.metacritic} <br />
                 Price: $60 <br />
-                <div>Buy Now!</div> 
+                <input type="submit" value="add" onClick={() => props.addToCart(foundGame)} /> 
             </div>
         )
     }

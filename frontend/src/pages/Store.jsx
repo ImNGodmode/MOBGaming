@@ -4,14 +4,14 @@ import { useEffect } from 'react'
 import GamesList from '../components/GamesList';
 import Search from '../components/Search';
 import Detail from '../components/Detail';
-
+import Cart from '../components/Cart'
 const apiKey = process.env.REACT_APP_API_KEY
 
 function Store() {
-console.log(apiKey)
+
   const [games, setGames] = useState([])
   const [foundGame, setFoundGame] = useState(null)
-  
+  const [cart, setCart] = useState([]);
   
   const getGame = async () => {
     try {
@@ -45,7 +45,8 @@ console.log(apiKey)
       console.error(e)
     }
   };
-
+ 
+  const addToCart = (item) => setCart((currentCart) => [...currentCart, item]);
  
 
   useEffect(() => {
@@ -57,15 +58,15 @@ console.log(apiKey)
   return (
   <>
     <div>Store</div>
-    <Search searchGame={searchGame} foundGame={foundGame} />
-    
+    <Search searchGame={searchGame} foundGame={foundGame} addToCart={addToCart} cart={cart} setCart={setCart}/>
+    <Cart cart={cart} setCart={setCart} />
     {foundGame ? (
 
-      <Detail foundGame={foundGame}/>
+      <Detail foundGame={foundGame} setFoundGame={setFoundGame}/>
     ) : (
-      <GamesList games = {games}/>
+      <GamesList games={games} searchGame={searchGame} addToCart={addToCart} cart={cart} setCart={setCart}/>
     )}
-        
+    
   </>
       
     )
