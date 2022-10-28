@@ -1,5 +1,7 @@
 // IMPORT REACT
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 // ADDITIONAL IMPORTS
 import { signUp } from "../utilities/users-service";
@@ -56,65 +58,128 @@ const SignUpForm = ({ setUser }) => {
       setError("Sign Up Failed - Try Again");
     }
   };
-  // Reder component
+
+  // return (
+  //   <div>
+  //     <h1>Sign Up Form</h1>
+  //     <div className="form-container">
+  //       <form
+  //         autoComplete="off"
+  //         onSubmit={(e) => {
+  //           return handleFormSubmission(e);
+  //         }}
+  //       >
+  //         <label>Name</label>
+  //         <input
+  //           type="text"
+  //           name="name"
+  //           onChange={(e) => {
+  //             return handleNameChange(e);
+  //           }}
+  //           value={name}
+  //           required
+  //         />
+  //         <label>Email</label>
+  //         <input
+  //           type="email"
+  //           name="email"
+  //           onChange={(e) => {
+  //             return handleEmailChange(e);
+  //           }}
+  //           value={email}
+  //           required
+  //         />
+  //         <label>Password</label>
+  //         <input
+  //           type="password"
+  //           name="password"
+  //           onChange={(e) => {
+  //             return handlePasswordChange(e);
+  //           }}
+  //           value={password}
+  //           required
+  //         />
+  //         <label>Confirm</label>
+  //         <input
+  //           type="password"
+  //           name="confirm"
+  //           onChange={(e) => {
+  //             return handleConfirmChange(e);
+  //           }}
+  //           value={confirm}
+  //           required
+  //         />
+  //         <button type="submit" disabled={disable}>
+  //           SIGN UP
+  //         </button>
+  //       </form>
+  //     </div>
+  //     <p className="error-message">&nbsp;{error}</p>
+  //   </div>
+  // );
+
+
   return (
-    <div>
-      <h1>Sign Up Form</h1>
-      <div className="form-container">
-        <form
-          autoComplete="off"
-          onSubmit={(e) => {
-            return handleFormSubmission(e);
+    <Form className="w-50 m-auto" onSubmit={(e) => {
+      return handleFormSubmission(e);
+    }}>
+      <h3 className="mb-3 "> Create an Account </h3>
+      <Form.Group className="mb-3" >
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text"
+          name="name"
+          onChange={(e) => {
+            return handleNameChange(e);
           }}
-        >
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => {
-              return handleNameChange(e);
-            }}
-            value={name}
-            required
-          />
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => {
-              return handleEmailChange(e);
-            }}
-            value={email}
-            required
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => {
-              return handlePasswordChange(e);
-            }}
-            value={password}
-            required
-          />
-          <label>Confirm</label>
-          <input
-            type="password"
-            name="confirm"
-            onChange={(e) => {
-              return handleConfirmChange(e);
-            }}
-            value={confirm}
-            required
-          />
-          <button type="submit" disabled={disable}>
-            SIGN UP
-          </button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
-    </div>
+          value={name}
+          placeholder="Name"
+          required />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          name="email"
+          onChange={(e) => {
+            return handleEmailChange(e);
+          }}
+          value={email}
+          required type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password"
+          name="password"
+          onChange={(e) => {
+            return handlePasswordChange(e);
+          }}
+          value={password}
+          required placeholder="Password" />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Confirm Password</Form.Label>
+        <Form.Control
+          type="password"
+          name="confirm"
+          onChange={(e) => {
+            return handleConfirmChange(e);
+          }}
+          value={confirm}
+          placeholder=" Confirm Password"
+          required />
+      </Form.Group>
+
+      <Button variant="primary" type="submit" disabled={disable}>
+        SIGN UP
+      </Button>
+    </Form>
   );
+
+
 };
 
 // EXPORT COMPONENT
