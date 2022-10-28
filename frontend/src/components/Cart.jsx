@@ -1,7 +1,7 @@
 import {React} from 'react'
 
 
-function Cart({cart, setCart}) {
+function Cart({cart, setCart, amountOfItems}) {
 
     
 
@@ -21,7 +21,7 @@ function Cart({cart, setCart}) {
         });
       };
 
-    const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
+    // const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
 
     const listItemsInCart = () => cart.map((item) => (
         <div key={item.id}>
@@ -30,11 +30,16 @@ function Cart({cart, setCart}) {
         </div>
     ));
 
+    const checkout = () => {
+      setCart([])
+    }
+
   return (
     <>
     <div>Cart</div>
     <div>{listItemsInCart()}</div>
     <div>Total: ${cartTotal}</div>
+    <button onClick={checkout}>checkout</button>
     </>
     
 

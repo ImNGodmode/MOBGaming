@@ -1,11 +1,11 @@
 import React from 'react'
-// import Cart from '../components/Cart'
-// import {cart, setCart} from './Store'
-function CartPage() {
+import Cart from '../components/Cart'
+
+function CartPage({cart, setCart, amountOfItems}) {
   return (
     <>
-    cart
-      {/* <Cart cart={cart} setCart={setCart} /> */}
+    <Cart cart={cart} setCart={setCart} amountOfItems={amountOfItems}/>
+    
     </>
   )
 }
