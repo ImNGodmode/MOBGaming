@@ -7,9 +7,29 @@ export async function signUp(userData) {
     return response;
 }
 
+export async function login(userData) {
+    // Make a network request
+    const response = await usersAPI.login(userData);
+  
+    // Retrieve token
+    const data = response.data;
+  
+    // console.log(data);
+  
+    // Add token to localstorage
+    localStorage.setItem("data", JSON.stringify(data));
+  
+    // Return response
+    return response;
+  }
+  
+export const logOut = () => {
+    localStorage.removeItem("data");
+  };
+
 export const getToken = () => {
     const token = JSON.parse(localStorage.getItem("data"))?.token;
-    console.log(token);
+    //console.log(token);
     if (!token) return null;
     const payload = JSON.parse(atob(token.split(".")[1]));
     if (payload.exp < Number.parseInt(Date.now() / 1000)) {

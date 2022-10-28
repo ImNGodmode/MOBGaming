@@ -36,3 +36,116 @@
     transform: rotate(360deg);
   }
 }
+
+img {
+  padding: 10px;
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 4%;
+}
+
+img:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.card {
+  transition: transform 0.2s;
+  background-color: rgb(236, 236, 237);
+}
+
+.card:hover {
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+.search-input {
+  border-color: black;
+}
+
+.nav-link {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(246, 241, 174);
+}
+
+.buy-btn {
+  background: #ff4742;
+  border: 1px solid #ff4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin: 5%;
+}
+
+.buy-btn:hover,
+.buy-btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ff4742;
+}
+
+.buy-btn:active {
+  opacity: 0.5;
+}
+
+/* show page */
+
+.game-title {
+  margin-top: 20px;
+}
+
+.game-desc {
+  width: 600px;
+  height: 300px;
+  margin: auto;
+  margin-top: 30px;
+  border: 2px solid gray;
+  border-radius: 1rem;
+  padding: 2%;
+  overflow: scroll;
+}
+
+.release-date {
+  margin-top: 10px;
+}
+
+.game-button {
+  display: block;
+  margin: auto;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.game-back {
+  border: solid green;
+  width: 200px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: green;
+  font-weight: bold;
+}
+.game-back:hover {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
