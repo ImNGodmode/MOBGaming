@@ -59,66 +59,6 @@ const SignUpForm = ({ setUser }) => {
     }
   };
 
-  // return (
-  //   <div>
-  //     <h1>Sign Up Form</h1>
-  //     <div className="form-container">
-  //       <form
-  //         autoComplete="off"
-  //         onSubmit={(e) => {
-  //           return handleFormSubmission(e);
-  //         }}
-  //       >
-  //         <label>Name</label>
-  //         <input
-  //           type="text"
-  //           name="name"
-  //           onChange={(e) => {
-  //             return handleNameChange(e);
-  //           }}
-  //           value={name}
-  //           required
-  //         />
-  //         <label>Email</label>
-  //         <input
-  //           type="email"
-  //           name="email"
-  //           onChange={(e) => {
-  //             return handleEmailChange(e);
-  //           }}
-  //           value={email}
-  //           required
-  //         />
-  //         <label>Password</label>
-  //         <input
-  //           type="password"
-  //           name="password"
-  //           onChange={(e) => {
-  //             return handlePasswordChange(e);
-  //           }}
-  //           value={password}
-  //           required
-  //         />
-  //         <label>Confirm</label>
-  //         <input
-  //           type="password"
-  //           name="confirm"
-  //           onChange={(e) => {
-  //             return handleConfirmChange(e);
-  //           }}
-  //           value={confirm}
-  //           required
-  //         />
-  //         <button type="submit" disabled={disable}>
-  //           SIGN UP
-  //         </button>
-  //       </form>
-  //     </div>
-  //     <p className="error-message">&nbsp;{error}</p>
-  //   </div>
-  // );
-
-
   return (
     <Form className="w-50 m-auto" onSubmit={(e) => {
       return handleFormSubmission(e);

@@ -29,50 +29,12 @@ const signIn = ({ setUser }) => {
     try {
       // Retrieve the logged in user
       const user = await login({ email, password });
-
       // Add the user to state
       setUser(user.data);
     } catch (error) {
       setError(error.message);
     }
   };
-
-  // return (
-  //   <div>
-  //     <div
-  //       className="form-container"
-  //       onSubmit={(e) => {
-  //         return handleFormSubmission(e);
-  //       }}
-  //     >
-  //       <h1>Login Form</h1>
-  //       <form autoComplete="off">
-  //         <label>Email</label>
-  //         <input
-  //           type="email"
-  //           name="email"
-  //           required
-  //           onChange={(e) => {
-  //             return handleInputChange(e);
-  //           }}
-  //           value={email}
-  //         />
-  //         <label>Password</label>
-  //         <input
-  //           type="password"
-  //           name="password"
-  //           required
-  //           onChange={(e) => {
-  //             return handleInputChange(e);
-  //           }}
-  //           value={password}
-  //         />
-  //         <button type="submit">LOG IN</button>
-  //       </form>
-  //     </div>
-  //     <p className="error-message">&nbsp;{error}</p>
-  //   </div>
-  // );
 
   return (
     <Form className="w-50 m-auto" onSubmit={(e) => {
@@ -101,7 +63,7 @@ const signIn = ({ setUser }) => {
           value={password} placeholder="Password" />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="success" type="submit">
         LOG IN
       </Button>
       <p className="error-message mt-3">&nbsp;{error}</p>
