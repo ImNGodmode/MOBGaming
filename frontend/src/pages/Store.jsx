@@ -8,13 +8,14 @@ import Detail from '../components/Detail';
 const apiKey = process.env.REACT_APP_API_KEY
 
 
-function Store({foundGame, setFoundGame, cart, setCart}) {
+function Store({foundGame, setFoundGame, cart, setCart, searchGame, rFoundGame}) {
 
   const [games, setGames] = useState([])
   
   
   const getGame = async () => {
     try {
+      console.log(apiKey)
       const response = await fetch(
         `https://api.rawg.io/api/games?key=${apiKey}`
       );
@@ -42,9 +43,9 @@ function Store({foundGame, setFoundGame, cart, setCart}) {
    
     {foundGame ? (
 
-      <Detail foundGame={foundGame} setFoundGame={setFoundGame} addToCart={addToCart}/>
+      <Detail foundGame={foundGame} setFoundGame={setFoundGame} addToCart={addToCart} rFoundGame={rFoundGame}/>
     ) : (
-      <GamesList games={games} addToCart={addToCart} cart={cart} setCart={setCart}/>
+      <GamesList games={games} addToCart={addToCart} cart={cart} setCart={setCart} searchGame={searchGame}/>
     )}
     
   </>
