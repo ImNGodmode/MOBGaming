@@ -8,11 +8,13 @@ import Detail from '../components/Detail';
 const apiKey = process.env.REACT_APP_API_KEY
 
 
-function Store({foundGame, setFoundGame, cart, setCart, searchGame, rFoundGame}) {
+
+function Store({ foundGame, setFoundGame, cart, setCart, searchGame, rFoundGame }) {
+
 
   const [games, setGames] = useState([])
-  
-  
+
+
   const getGame = async () => {
     try {
       console.log(apiKey)
@@ -30,27 +32,29 @@ function Store({foundGame, setFoundGame, cart, setCart, searchGame, rFoundGame})
     }
   };
   const addToCart = (item) => setCart((currentCart) => [...currentCart, item]);
- 
+
 
   useEffect(() => {
     getGame()
-  },[])
+  }, [])
 
- 
+
 
   return (
-  <>
-   
-    {foundGame ? (
 
-      <Detail foundGame={foundGame} setFoundGame={setFoundGame} addToCart={addToCart} rFoundGame={rFoundGame}/>
-    ) : (
-      <GamesList games={games} addToCart={addToCart} cart={cart} setCart={setCart} searchGame={searchGame}/>
-    )}
-    
-  </>
-      
-    )
+    <div className='store-container'>
+
+      {foundGame ? (
+
+        <Detail foundGame={foundGame} setFoundGame={setFoundGame} addToCart={addToCart} rFoundGame={rFoundGame} />
+      ) : (
+        <GamesList games={games} addToCart={addToCart} cart={cart} setCart={setCart} searchGame={searchGame} />
+      )}
+
+    </div>
+
+  )
+
 }
 
 export default Store

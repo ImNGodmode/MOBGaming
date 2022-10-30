@@ -40,7 +40,7 @@ const signIn = ({ setUser }) => {
     <Form className="w-50 m-auto" onSubmit={(e) => {
       return handleFormSubmission(e);
     }}>
-      <h4 className="mb-3 "> Have an Account? </h4>
+      <h4 className=" auth-headers mb-3 "> Have an Account? </h4>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" name="email" required
