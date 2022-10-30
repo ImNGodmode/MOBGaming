@@ -93,6 +93,12 @@ img:hover {
   color: rgb(246, 241, 174)
 }
 
+.topBar{
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+}
+
 
 .buy-btn {
   background: #FF4742;

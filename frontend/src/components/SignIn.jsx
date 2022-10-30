@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import { login } from "./../utilities/users-service";
 
 // CREATE COMPONENT
-const signIn = ({ setUser }) => {
+const SignIn = ({ setUser }) => {
   // Create different state variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,4 +74,4 @@ const signIn = ({ setUser }) => {
 };
 
 // EXPORT COMPONENT
-export default signIn;
+export default SignIn;

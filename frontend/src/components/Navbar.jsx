@@ -38,7 +38,7 @@ function Navbar1({ user, setUser, searchGame, cart, rFoundGame }) {
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" className='topBar'>
       <Container fluid>
         <Link to="/games" className="navbar-brand me-5" >MOBGaming </Link>
 
