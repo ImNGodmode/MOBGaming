@@ -63,7 +63,7 @@ const SignUpForm = ({ setUser }) => {
     <Form className="w-50 m-auto" onSubmit={(e) => {
       return handleFormSubmission(e);
     }}>
-      <h3 className="mb-3 "> Create an Account </h3>
+      <h3 className="mb-3 auth-headers "> Create an Account </h3>
       <Form.Group className="mb-3" >
         <Form.Label>Name</Form.Label>
         <Form.Control type="text"

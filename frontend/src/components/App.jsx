@@ -14,6 +14,7 @@ function App() {
   const [foundGame, setFoundGame] = useState(null)
   const [cart, setCart] = useState([]);
   console.log(user)
+
   const searchGame = async (searchTerm) => {
     try {
       const response = await fetch(
@@ -30,16 +31,21 @@ function App() {
       console.error(e)
     }
   };
+
   const amountOfItems = (id) => cart.filter((item) => item.id === id).length;
+
+  const rFoundGame = () => {
+    setFoundGame(null)
+   }
 
   return (
     <div className="App">
        {user ? (
         <>
-          <Navbar user={user} setUser={setUser} searchGame={searchGame} cart={cart} />
+          <Navbar user={user} setUser={setUser} searchGame={searchGame} cart={cart} rFoundGame={rFoundGame}/>
           <Routes>
             <Route path="/games/cart" element={<CartPage cart={cart} setCart={setCart} amountOfItems={amountOfItems}/>} />
-            <Route path="/games" element={<Store foundGame={foundGame} setFoundGame={setFoundGame} cart={cart} setCart={setCart}/>} />
+            <Route path="/games" element={<Store foundGame={foundGame} setFoundGame={setFoundGame} cart={cart} setCart={setCart} searchGame={searchGame} rFoundGame={rFoundGame}/>} />
           </Routes>
         </>
       ) : (
