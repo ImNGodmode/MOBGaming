@@ -9,9 +9,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-
-function Navbar1({ user, setUser, searchGame, cart }) {
-
+function Navbar1({ user, setUser, searchGame, cart, rFoundGame}) {
+  
   const handleLogOut = () => {
     // Call the logout function
     userService.logOut();
@@ -46,7 +45,7 @@ function Navbar1({ user, setUser, searchGame, cart }) {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '110px' }}
             navbarScroll>
-            <Link to="/games" className="nav-link" aria-current="page" > Store</Link>
+            <Link to="/games" className="nav-link" aria-current="page" onClick={rFoundGame} > Store</Link>
             <Link to="/games/cart" className="nav-link " aria-current="page" > Cart ({cart.length}) </Link>
             <span className="nav-link" > Welcome {user.newUser?.name || user.currentUser?.name} </span>
           </Nav>
@@ -62,6 +61,7 @@ function Navbar1({ user, setUser, searchGame, cart }) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
 
   )
 }
