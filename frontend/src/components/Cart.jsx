@@ -38,7 +38,7 @@ function Cart({ cart, setCart, amountOfItems }) {
   }
 
   return (
-    <div className="w-200 px-3 py-5 cart-container">
+    <div className="px-3 py-5">
       <h2 className='mb-4 fw-normal text-white mt-3'>Your Shopping Cart</h2>
       <div className='d-flex justify-content-between align-items-center mb-4'>
         <div className="card-body rounded-3 mb-4">{listItemsInCart()}</div>

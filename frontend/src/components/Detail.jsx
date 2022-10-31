@@ -1,18 +1,31 @@
-import React from 'react'
-
-
- function Detail({foundGame, rFoundGame, addToCart}) {
-
+import React from "react";
+function Detail({ foundGame, rFoundGame, addToCart }) {
   return (
     <>
-    <h1> Title: {foundGame.name}</h1>
-    <input type="submit" value="add to cart" onClick={() => addToCart(foundGame)} /><br/>
-    <img src={foundGame.background_image_additional} alt={foundGame.backgrould_image} />
-    <p>{foundGame.description_raw}</p>
-    Release date: {foundGame.released}
-    <div onClick={rFoundGame}>Back to List</div>
+      <div className="spaceDetail"></div>
+      <h1 className="detail-title">{foundGame.name}</h1>
+      <img
+        className="detail-image"
+        src={foundGame.background_image_additional}
+        alt={foundGame.background_image}
+      />
+      <br />
+      <input
+        className="buy-btn"
+        type="submit"
+        value="Add to Cart"
+        onClick={() => addToCart(foundGame)}
+      />
+      <br />
+      <p className="details-date">Release date: {foundGame.released}</p>
+      <div className="detail-desc-border">
+        <p className="detail-desc">{foundGame.description_raw}</p>
+      </div>
+      <br />
+      <div className="back-to-list" onClick={rFoundGame}>
+        Back to List
+      </div>
     </>
-  )
+  );
 }
-
-export default Detail
+export default Detail;

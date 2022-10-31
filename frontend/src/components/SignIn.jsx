@@ -37,7 +37,7 @@ const SignIn = ({ setUser }) => {
   };
 
   return (
-    <Form className="w-50 m-auto" onSubmit={(e) => {
+    <Form className="w-50 m-auto sign-in-form" onSubmit={(e) => {
       return handleFormSubmission(e);
     }}>
       <h4 className=" auth-headers mb-3 "> Have an Account? </h4>

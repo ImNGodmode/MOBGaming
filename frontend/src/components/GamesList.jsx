@@ -18,6 +18,7 @@ function GamesList({ games, addToCart, searchGame }) {
     ))
     return (
         <>
+            <div className='space'></div>
             <h4 className='gameslist-header d-flex justify-content-center mt-3'> Available Games</h4>
             <div className='d-flex flex-wrap justify-content-center' >
                 {gamesData}

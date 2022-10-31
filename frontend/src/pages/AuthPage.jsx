@@ -3,8 +3,8 @@ import SignUpForm from '../components/SignUpForm'
 import SignIn from '../components/SignIn'
 function AuthPage({ setUser }) {
   return (
-    <div>
-      <h1 className='mt-4 auth-headers'>Welcome to MOBGaming App</h1>
+    <div className='authBackground'>
+      <h1 className='mt-4 auth-headers'>Welcome to MOBGaming </h1>
       <SignUpForm setUser={setUser} />
       <br />
       <SignIn setUser={setUser} />

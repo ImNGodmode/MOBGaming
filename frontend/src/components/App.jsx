@@ -51,6 +51,21 @@ function App() {
       ) : (
         <AuthPage setUser={setUser} />
       )}
+      <div className='icons-wrapper' bg="dark" variant="dark" >
+      
+        <div>
+          <a href="https://github.com/mariessad"><i className="bi bi-github regular-icon icon" style={{ color: '#E75480' }}></i></a>
+          <h4 className='text-white'><span>M</span>ariessa</h4>
+        </div> 
+         <div>
+          <a href="https://github.com/Oksanka25"><i className="bi bi-github github-middle icon " style={{ color: 'white' }}></i></a>
+          <h4 className='text-white'><span>O</span>ksana</h4>
+        </div>
+        <div>
+          <a href="https://github.com/ImNGodmode"><i className="bi bi-github regular-icon icon" style={{ color: 'blue' }}></i></a>
+          <h4 className='text-white'> <span>B</span>lake </h4>
+        </div>
+      </div>
     </div>
   );
 }

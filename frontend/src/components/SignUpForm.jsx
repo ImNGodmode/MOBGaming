@@ -60,7 +60,7 @@ const SignUpForm = ({ setUser }) => {
   };
 
   return (
-    <Form className="w-50 m-auto" onSubmit={(e) => {
+    <Form className="w-50 m-auto sign-up-form" onSubmit={(e) => {
       return handleFormSubmission(e);
     }}>
       <h3 className="mb-3 auth-headers "> Create an Account </h3>

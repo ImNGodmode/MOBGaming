@@ -40,7 +40,7 @@ function Navbar1({ user, setUser, searchGame, cart, rFoundGame }) {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className='topBar'>
       <Container fluid>
-        <Link to="/games" className="navbar-brand me-5" >MOBGaming </Link>
+        <Link to="/games" className="navbar-brand me-5" ><span>MOB</span>Gaming </Link>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
